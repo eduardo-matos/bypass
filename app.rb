@@ -2,8 +2,8 @@ require 'json'
 require 'bunny'
 
 class App
-  MEAN_DURATION = ENV.fetch('APP_MEAN_DURATION_IN_MILLISECONDS', 1000)
-  MAX_VARIATION = ENV.fetch('APP_MAX_VARIATION_IN_MILLISECONDS', 100)
+  MIN_DURATION = ENV.fetch('APP_MAX_DURATION_IN_MILLISECONDS', 0)
+  MAX_DURATION = ENV.fetch('APP_MIN_DURATION_IN_MILLISECONDS', 1000)
   ERROR_RATE = ENV.fetch('APP_ERROR_RATE', 0).to_f
 
   def initialize(logger)
@@ -45,7 +45,7 @@ class App
   end
 
   def simulate_slow_process
-    total_duration = rand((MEAN_DURATION - MAX_VARIATION)..(MEAN_DURATION + MAX_VARIATION))
+    total_duration = rand(MIN_DURATION..MAX_DURATION)
 
     started_at = Time.now()
     sleep(total_duration / 1000.0)
