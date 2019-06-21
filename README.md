@@ -38,4 +38,4 @@ docker run \
  bypass
 ```
 
-Make sure to use the `--net=host` option if RabbitMQ and MongoDB are running in the host network.
+Make sure to use the `--net=host` option if RabbitMQ is running in the host network.
