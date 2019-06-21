@@ -2,8 +2,8 @@ require 'json'
 require 'bunny'
 
 class App
-  MIN_DURATION = ENV.fetch('APP_MAX_DURATION_IN_MILLISECONDS', 0).to_i
-  MAX_DURATION = ENV.fetch('APP_MIN_DURATION_IN_MILLISECONDS', 1000).to_i
+  MIN_DURATION = ENV.fetch('APP_MIN_DURATION_IN_MILLISECONDS', 0).to_i
+  MAX_DURATION = ENV.fetch('APP_MAX_DURATION_IN_MILLISECONDS', 1000).to_i
   ERROR_RATE = ENV.fetch('APP_ERROR_RATE', 0).to_f
 
   def initialize(logger)
