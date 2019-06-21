@@ -77,4 +77,5 @@ class App
   end
 end
 
+STDOUT.sync = true
 App.new(Logger.new(STDOUT))
